@@ -3,6 +3,15 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+
+let testRouter = require('./routes/test')
+
+/**
+ * Routes
+ */
+
+app.use('/test', testRouter)
+
 // start server
 const port = process.env.PORT 
 app.listen(port, function () {
