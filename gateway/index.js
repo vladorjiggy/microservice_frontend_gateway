@@ -7,7 +7,7 @@ dotenv.config();
 let testRouter = require('./routes/test')
 
 /**
- * Routes
+ * API
  */
 
 app.use('/test', testRouter)

@@ -1,7 +1,8 @@
 const path = require('path')
 
 module.exports = {
-outputDir: path.resolve(__dirname, '../server/dist'),
+  outputDir: path.resolve(__dirname, '../server/dist'),
+
   devServer: {
     proxy: {
       '^/api' : {
@@ -9,6 +10,7 @@ outputDir: path.resolve(__dirname, '../server/dist'),
       },
     }
   },
+
   configureWebpack: {
     resolve: {
       alias: {
@@ -16,5 +18,9 @@ outputDir: path.resolve(__dirname, '../server/dist'),
         "#": path.resolve(__dirname, 'frontend/')
       }
     }
-  }
+  },
+
+  transpileDependencies: [
+    'vuetify'
+  ]
 }

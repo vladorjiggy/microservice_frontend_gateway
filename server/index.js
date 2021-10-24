@@ -3,7 +3,6 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-
 if (process.env.NODE_ENV === 'production'){
     // static folder
     app.use(express.static(__dirname + '/dist/'))
@@ -14,6 +13,6 @@ if (process.env.NODE_ENV === 'production'){
 
 // start server
 const port = process.env.PORT 
-const server = app.listen(port, function () {
+app.listen(port, function () {
     console.log('Server listening on port ' + port);
 });
